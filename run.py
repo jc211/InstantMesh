@@ -12,14 +12,14 @@ from tqdm import tqdm
 from huggingface_hub import hf_hub_download
 from diffusers import DiffusionPipeline, EulerAncestralDiscreteScheduler
 
-from src.utils.train_util import instantiate_from_config
-from src.utils.camera_util import (
+from instantmesh.utils.train_util import instantiate_from_config
+from instantmesh.utils.camera_util import (
     FOV_to_intrinsics, 
     get_zero123plus_input_cameras,
     get_circular_camera_poses,
 )
-from src.utils.mesh_util import save_obj, save_obj_with_mtl
-from src.utils.infer_util import remove_background, resize_foreground, save_video
+from instantmesh.utils.mesh_util import save_obj, save_obj_with_mtl
+from instantmesh.utils.infer_util import remove_background, resize_foreground, save_video
 
 
 def get_render_cameras(batch_size=1, M=120, radius=4.0, elevation=20.0, is_flexicubes=False):

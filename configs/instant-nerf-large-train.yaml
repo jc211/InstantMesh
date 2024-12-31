@@ -1,12 +1,12 @@
 model:
   base_learning_rate: 4.0e-04
-  target: src.model.MVRecon
+  target: instantmesh.model.MVRecon
   params:
     input_size: 320
     render_size: 192
     
     lrm_generator_config:
-      target: src.models.lrm.InstantNeRF
+      target: instantmesh.models.lrm.InstantNeRF
       params:
         encoder_feat_dim: 768
         encoder_freeze: false
@@ -21,12 +21,12 @@ model:
 
 
 data:
-  target: src.data.objaverse.DataModuleFromConfig
+  target: instantmesh.data.objaverse.DataModuleFromConfig
   params:
     batch_size: 2
     num_workers: 8
     train:
-      target: src.data.objaverse.ObjaverseData
+      target: instantmesh.data.objaverse.ObjaverseData
       params:
         root_dir: data/objaverse
         meta_fname: filtered_obj_name.json
@@ -39,7 +39,7 @@ data:
         camera_rotation: true
         validation: false
     validation:
-      target: src.data.objaverse.ValidationData
+      target: instantmesh.data.objaverse.ValidationData
       params:
         root_dir: data/valid_samples
         input_view_num: 6

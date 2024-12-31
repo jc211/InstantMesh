@@ -10,7 +10,7 @@ from pytorch_lightning.strategies import DDPStrategy
 from pytorch_lightning.callbacks import Callback
 from pytorch_lightning.utilities import rank_zero_only, rank_zero_warn
 
-from src.utils.train_util import instantiate_from_config
+from instantmesh.utils.train_util import instantiate_from_config
 
 
 @rank_zero_only

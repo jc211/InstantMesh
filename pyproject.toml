@@ -1,0 +1,12 @@
+[project]
+name = "instantmesh"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+
+dependencies = [
+"xatlas",
+"nvdiffrast@git+https://github.com/NVlabs/nvdiffrast/",
+]
+
+
